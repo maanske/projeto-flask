@@ -6,3 +6,7 @@ pip install flask
 python.exe -m pip install --upgrade pip
 pip install flask_sqlalchemy
 pip install flask-migrate
+
+git add .
+git commit -m "Implementa filtro por data nos relatórios"
+git push
