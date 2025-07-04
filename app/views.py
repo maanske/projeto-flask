@@ -11,10 +11,14 @@ def homepage():
     }
     return render_template('index.html')
 
-@app.route('/contato/')
+@app.route('/contato/', methods=['GET','POST'])
 def novapagina():
     context = {}
     if request.method == 'GET':
-        pesquisa = request.args.ger('pesquisa')
+        pesquisa = request.args.get('pesquisa')
+        context.update({'pesquisa':pesquisa})
+    if request.method == 'POST':
+        pesquisa = request.form['pesquisa']
+        print('POST',pesquisa)
         context.update({'pesquisa':pesquisa})
     return render_template('contato.html', context=context)
